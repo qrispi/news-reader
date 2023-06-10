@@ -1,9 +1,9 @@
 import './Thumbnail.css';
 
-function Thumbnail() {
+function Thumbnail({data}) {
   return (
     <div>
-      <h2>Thumbnail</h2>
+      <h2>{data.title}</h2>
     </div>
   );
 }

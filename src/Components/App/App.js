@@ -12,13 +12,11 @@ function App() {
 
 	useEffect(() => {
 		const promise = getTopStories();
-		console.log(promise)
 		promise.then(data => {
 			if (typeof data === 'string' || data instanceof String) {
 				setGetError(data);
 			} else {
-				setTopStories(data.articles)
-				console.log(data.articles);
+				setTopStories(data.articles);
 			}
 		});
 	}, []);
@@ -28,14 +26,13 @@ function App() {
 			<Switch>
 				<Route exact path='/'>
 					<h1>News Reader</h1>
+					{topStories &&
+						topStories.map((story, index) => <Thumbnail data={story} key={index} />)
+					}
 				</Route>
 
 				<Route path='/article/:id'>
 					<Article />
-				</Route>
-
-				<Route exact path='/thumbnail'>
-					<Thumbnail />
 				</Route>
 
 				<Redirect to='/' />
