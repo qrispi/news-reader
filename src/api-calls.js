@@ -1,19 +1,24 @@
-import 'dotenv/config'
+import data from "./mock-data"
 
 const getTopStories = async() => {
-    const response = await fetch(
-        'https://newsapi.org/v2/top-headlines?country=us',
-        {
-			method: 'GET',
-			headers: {
-				'X-Api-Key': `${process.env.API_KEY}`,
-			}
-		}
-    );
-    if (!response.ok) {
-		throw new Error(`HTTP error! status: ${response.status}`);
-	}
-	return response
+    const promise1 = new Promise((resolve, reject) => {
+        resolve(data);
+    });
+    return promise1
+    // try {
+    //     const response = await fetch(
+    //         'https://newsapi.org/v2/top-headlines?country=us',
+    //         {
+    //             method: 'GET',
+    //             headers: {
+    //                 'X-Api-Key': `${process.env.REACT_APP_API_KEY}`,
+    //             }
+    //         }
+    //     );
+    //     return await response.json();
+    // } catch (error) {
+    //     return error.message;
+    // }
 }
 
-export default getTopStories
+export default getTopStories;
