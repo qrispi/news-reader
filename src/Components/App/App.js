@@ -27,7 +27,9 @@ function App() {
 				<Route exact path='/'>
 					<h1>News Reader</h1>
 					{topStories &&
-						topStories.map((story, index) => <Thumbnail data={story} key={index} />)
+						<section className='thumb-container'>
+							{topStories.map((story, index) => <Thumbnail data={story} key={index} />)}
+						</section>
 					}
 				</Route>
 

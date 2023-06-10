@@ -2,8 +2,8 @@ import './Thumbnail.css';
 
 function Thumbnail({data}) {
   return (
-    <div>
-      <h2>{data.title}</h2>
+    <div className='thumbnail'>
+      <h2 className='thumb-title'>{data.title}</h2>
     </div>
   );
 }
