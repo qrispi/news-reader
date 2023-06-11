@@ -24,7 +24,7 @@ const getTopStories = async() => {
 const getSearchStories = async(keywords) => {
     try {
         const response = await fetch(
-            `https://newsapi.org/v2/everything?q=${keywords}&sortBy=publishedAt`,
+            `https://newsapi.org/v2/everything?q=${keywords}&sortBy=popularity&pageSize=30`,
             {
                 method: 'GET',
                 headers: {
