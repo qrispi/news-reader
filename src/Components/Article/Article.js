@@ -1,6 +1,6 @@
 import './Article.css';
 
-function Article() {
+function Article({data}) {
   return (
     <div>
       <h2>Article</h2>

@@ -21,6 +21,15 @@ function App() {
 		});
 	}, []);
 
+	const createThumbnails = () => {
+		return topStories.map((story, index) => 
+			<NavLink to={`/article/${index}`}>
+				<Thumbnail data={story} key={index} />
+			</NavLink>
+		)
+	}
+
+
 	return (
 		<div>
 			<Switch>
@@ -28,7 +37,7 @@ function App() {
 					<h1>News Reader</h1>
 					{topStories &&
 						<section className='thumb-container'>
-							{topStories.map((story, index) => <Thumbnail data={story} key={index} />)}
+							{createThumbnails()}
 						</section>
 					}
 				</Route>
