@@ -1,23 +1,25 @@
 .thumbnail {
-    width: 20vw;
-    height: 15vw;
+    width: 20vmax;
+    height: 18vmax;
     border: 2px solid red;
-    margin: 2vw;
+    margin: 2vmax;
     display: flex;
     flex-direction: column;
 }
 
 .thumb-title {
-    width: 20vw;
+    text-align: center;
+    width: 20vmax;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     margin: 0;
     margin-top: auto;
-    padding: 0;
 }
 
 .thumb-img {
-    width: 20vw;
-    height: 12vw;
+    width: 20vmax;
+    height: 12vmax;
 }
