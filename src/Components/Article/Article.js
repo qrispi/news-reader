@@ -3,7 +3,7 @@ import './Article.css';
 function Article({data}) {
   return (
     <div>
-      <h2>Article</h2>
+      <h2>{data.title}</h2>
     </div>
   );
 }

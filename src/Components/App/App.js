@@ -23,7 +23,7 @@ function App() {
 
 	const createThumbnails = () => {
 		return topStories.map((story, index) => 
-			<NavLink to={`/article/${index}`}>
+			<NavLink to={`/article/${index}`} className='link' key={index}>
 				<Thumbnail data={story} key={index} />
 			</NavLink>
 		)
@@ -42,9 +42,9 @@ function App() {
 					}
 				</Route>
 
-				<Route path='/article/:id'>
-					<Article />
-				</Route>
+				<Route path='/article/:index' render={({match}) => 
+					<Article data={topStories[parseInt(match.params.index)]} /> } 
+				/>
 
 				<Redirect to='/' />
 			</Switch>
