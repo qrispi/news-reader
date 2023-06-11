@@ -1,0 +1,19 @@
+.article-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vmax;
+}
+
+.content-container {
+    width: 60vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-img {
+    width: 50vmax;
+}
