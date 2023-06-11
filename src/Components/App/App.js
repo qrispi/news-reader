@@ -29,12 +29,18 @@ function App() {
 		)
 	}
 
+	const searchArticles = (e) => {
+		if(e.key === 'Enter') {
+			console.log(e.target.value)
+		}
+	}
 
 	return (
 		<div>
 			<Switch>
 				<Route exact path='/'>
 					<h1>News Reader</h1>
+					<input type='search' placeholder='Search Articles...' className='search-bar' onKeyDown={searchArticles}/>
 					{topStories &&
 						<section className='thumb-container'>
 							{createThumbnails()}
