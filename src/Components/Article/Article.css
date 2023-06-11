@@ -1,0 +1,36 @@
+.article-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    width: 60vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #e5e5e5;
+    padding-bottom: 5vmax;
+}
+
+.article-img {
+    width: 60vmax;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5vh;
+    padding: 0 1vw;
+}
+
+.article-text {
+    margin: 3vh;
+    font-size: 1.5rem;
+}
+
+h3 {
+    margin: 0.5vh;
+}
