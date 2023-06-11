@@ -1,10 +1,18 @@
 .thumbnail {
     width: 20vmax;
     height: 18vmax;
-    border: 2px solid red;
     margin: 2vmax;
     display: flex;
     flex-direction: column;
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 5px 5px 11px #caf0f8;
+}
+
+.thumbnail:hover {
+    cursor: pointer;
+    scale: 1.1;
+    box-shadow: 8px 8px 11px #caf0f8;
 }
 
 .thumb-title {
@@ -22,4 +30,6 @@
 .thumb-img {
     width: 20vmax;
     height: 12vmax;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
