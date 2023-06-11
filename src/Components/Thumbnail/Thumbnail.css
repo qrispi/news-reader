@@ -1,0 +1,35 @@
+.thumbnail {
+    width: 20vmax;
+    height: 18vmax;
+    margin: 2vmax;
+    display: flex;
+    flex-direction: column;
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 5px 5px 11px #caf0f8;
+}
+
+.thumbnail:hover {
+    cursor: pointer;
+    scale: 1.1;
+    box-shadow: 8px 8px 11px #caf0f8;
+}
+
+.thumb-title {
+    text-align: center;
+    width: 20vmax;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin: 0;
+    margin-top: auto;
+}
+
+.thumb-img {
+    width: 20vmax;
+    height: 12vmax;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}

@@ -1,9 +1,10 @@
 import './Thumbnail.css';
 
-function Thumbnail() {
+function Thumbnail({data}) {
   return (
-    <div>
-      <h2>Thumbnail</h2>
+    <div className='thumbnail'>
+        <img src={data.urlToImage} className='thumb-img' />
+        <h2 className='thumb-title'>{data.title}</h2>
     </div>
   );
 }
