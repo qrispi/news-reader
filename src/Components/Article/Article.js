@@ -6,7 +6,12 @@ function Article({data}) {
   return (
     <div className='article-container'>
         <div className='content-container'>
-            <img src={data.urlToImage} className='article-img' alt='article image'/>
+            <img 
+                onError={(e) => e.target.src = require('../../images/placeholder.png')} 
+                src={data.urlToImage ? data.urlToImage : require('../../images/placeholder.png')} 
+                className='article-img' 
+                alt='article image'
+            />
             <h2 className='article-title'>{data.title}</h2>
             <h3>{date.toUTCString()}</h3>
             <h3>{data.author}</h3>
