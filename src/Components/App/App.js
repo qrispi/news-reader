@@ -62,13 +62,16 @@ function App() {
 							{createThumbnails()}
 						</section>
 					}
-					{stories.length === 0 &&
+					{getError &&
+						<p className='no-results-msg'>Sorry, we are having server issues. Please try again later!</p>
+					}
+					{stories.length === 0 && !getError && 
 						<p className='no-results-msg'>Sorry, we can't find any articles matching that search.</p>
 					}
 				</Route>
 
 				<Route path='/article/:index' render={({match}) => 
-					<Article data={stories[parseInt(match.params.index)]} /> } 
+					<Article data={stories[parseInt(match.params.index)]} fetch={loadTopStories} /> } 
 				/>
 
 				<Redirect to='/' />
