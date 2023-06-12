@@ -21,4 +21,21 @@ const getTopStories = async() => {
     // }
 }
 
-export default getTopStories;
+const getSearchStories = async(keywords) => {
+    try {
+        const response = await fetch(
+            `https://newsapi.org/v2/everything?q=${keywords}&sortBy=popularity&pageSize=30`,
+            {
+                method: 'GET',
+                headers: {
+                    'X-Api-Key': `${process.env.REACT_APP_API_KEY}`,
+                }
+            }
+        );
+        return await response.json();
+    } catch (error) {
+        return error.message;
+    }
+}
+
+export default { getTopStories, getSearchStories };
