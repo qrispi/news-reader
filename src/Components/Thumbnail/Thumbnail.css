@@ -1,18 +1,18 @@
 .thumbnail {
     width: 20vmax;
-    height: 18vmax;
+    height: 19vmax;
     margin: 2vmax;
     display: flex;
     flex-direction: column;
     background-color: #e5e5e5;
     border-radius: 8px;
-    box-shadow: 5px 5px 11px #caf0f8;
+    box-shadow: 5px 5px 11px #6D6D6D;
 }
 
 .thumbnail:hover {
     cursor: pointer;
     scale: 1.1;
-    box-shadow: 8px 8px 11px #caf0f8;
+    box-shadow: 8px 8px 11px #6D6D6D;
 }
 
 .thumb-title {
@@ -24,7 +24,7 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     margin: 0;
-    margin-top: auto;
+    /* margin-top: auto; */
 }
 
 .thumb-img {
