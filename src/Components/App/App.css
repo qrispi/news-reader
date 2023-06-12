@@ -10,10 +10,22 @@
   color: black;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 6rem;
+  margin: 2vh 5vw;
+}
+
 .search-bar {
   width: 40vw;
   height: 5vh;
   font-size: 1.5rem;
   border-radius: 8px;
   padding-left: 1vw;
+  margin-right: 5vw;
 }
