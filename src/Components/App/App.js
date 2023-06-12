@@ -11,14 +11,7 @@ function App() {
 	const [getError, setGetError] = useState('');
 
 	useEffect(() => {
-		const promise = fetches.getTopStories();
-		promise.then(data => {
-			if (typeof data === 'string' || data instanceof String) {
-				setGetError(data);
-			} else {
-				setStories(data.articles);
-			}
-		});
+		loadTopStories();
 	}, []);
 
 	const createThumbnails = () => {
@@ -27,6 +20,17 @@ function App() {
 				<Thumbnail data={story} key={index} />
 			</NavLink>
 		)
+	}
+
+	const loadTopStories = () => {
+		const promise = fetches.getTopStories();
+		promise.then(data => {
+			if (typeof data === 'string' || data instanceof String) {
+				setGetError(data);
+			} else {
+				setStories(data.articles);
+			}
+		});
 	}
 
 	const searchArticles = (e) => {
@@ -48,9 +52,7 @@ function App() {
 			<Switch>
 				<Route exact path='/'>
 					<header>
-						<NavLink to='/' className='link'>
-							<h1>News Reader</h1>
-						</NavLink>
+						<h1 onClick={loadTopStories}>News Reader</h1>
 						<form>
 							<input type='search' placeholder='Search Articles...' className='search-bar' onKeyDown={searchArticles} required/>
 						</form>
