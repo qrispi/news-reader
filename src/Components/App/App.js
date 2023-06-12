@@ -30,13 +30,13 @@ function App() {
 	}
 
 	const searchArticles = (e) => {
-		if(e.key === 'Enter') {
+		if(e.key === 'Enter' && e.target.value) {
+			e.preventDefault();
 			const promise = fetches.getSearchStories(e.target.value);
 			promise.then(data => {
 				if (typeof data === 'string' || data instanceof String) {
 					setGetError(data);
 				} else {
-					console.log(data.articles)
 					setStories(data.articles);
 				}
 			});
@@ -47,12 +47,21 @@ function App() {
 		<div>
 			<Switch>
 				<Route exact path='/'>
-					<h1>News Reader</h1>
-					<input type='search' placeholder='Search Articles...' className='search-bar' onKeyDown={searchArticles}/>
+					<header>
+						<NavLink to='/' className='link'>
+							<h1>News Reader</h1>
+						</NavLink>
+						<form>
+							<input type='search' placeholder='Search Articles...' className='search-bar' onKeyDown={searchArticles} required/>
+						</form>
+					</header>
 					{stories &&
 						<section className='thumb-container'>
 							{createThumbnails()}
 						</section>
+					}
+					{stories.length === 0 &&
+						<p className='no-results-msg'>Sorry, we can't find any articles matching that search.</p>
 					}
 				</Route>
 
