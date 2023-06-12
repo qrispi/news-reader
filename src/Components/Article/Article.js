@@ -1,4 +1,5 @@
 import './Article.css';
+import { NavLink } from 'react-router-dom';
 
 function Article({data}) {
 
@@ -17,6 +18,9 @@ function Article({data}) {
             <h3>{data.author}</h3>
             <p className='article-text'>{data.content}</p>
             <a href={data.url}>Read More at {`${data.source.name}`} ➤</a>
+            <NavLink to='/'>
+                <button className='back-button'>Return Home</button>
+            </NavLink>
         </div>
     </div>
   );
