@@ -57,6 +57,7 @@ News Reader is a site that helps users find popular news articles from sources a
 [//]: <>
 - Wins:
   - Implementing some error handling for broken image URLs was a fun challenge that turned into a win. Some of the links for images provided are non-existent or broken. Fixing the broken image URLs was fairly easy with react's built in onError handler but wasn't as apparent is that an img src of null will not cause onError to fire and must be dealt with prior to rendering.
+  - Setting up mock data in the form of a new promise object was a novel and useful way of developing the application without exceeding the API request daily limit.
 - Challenges:
   - A lot of the articles did not have valid IDs nor did the API have a way to request specific individual articles making it very difficult to properly reload the page from within the article view. This was solved by passing the main article fetching function from App to Article as a prop and letting useEffect re-fetch all the articles on component mount.
 
